@@ -91,23 +91,24 @@
 <div id='map-one' class='map'> </div>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiYmV5ZXJhdXQiLCJhIjoiY2lnM3hhMGthMjc5NHRqbTNvMmdtbHR4YiJ9.dP5gGJ59Hly_pleCOGkzQw';
-  L.mapbox.map('map-one', 'mapbox.light').setView([41.89, 12.48], 14);
-    var myLayer = L.mapbox.featureLayer().addTo(mapTooltipsJS);
+var mapTooltipsJS = L.mapbox.map('map-tooltips-js', 'mapbox.light')
+  .setView([37.8, -96], 4);
+var myLayer = L.mapbox.featureLayer().addTo(mapTooltipsJS);
 
 var geojson = [
   {
     type: 'Feature',
     geometry: {
       type: 'Point',
-      coordinates: [41.89, 12.4768]
+      coordinates: [-77.031952, 38.913184]
     },
     properties: {
-      title: 'Pantheon',
-      description: 'Pantheon',
-      //image: 'http://3.bp.blogspot.com/-PN07yFqyJyY/TuUQQMaSHPI/AAAAAAAAAwc/IgCUpVeLFdc/s640/Akrotiri_minoan_town-+Detail.jpg',
+      title: 'Mapbox DC',
+      description: '1714 14th St NW, Washington DC',
+      image: 'https://farm9.staticflickr.com/8604/15769066303_3e4dcce464_n.jpg',
       icon: {
-        iconUrl: 'https://d30y9cdsu7xlg0.cloudfront.net/png/559525-200.png',
-        iconSize: [20, 20], // size of the icon
+        iconUrl: 'https://www.mapbox.com/mapbox.js/assets/images/astronaut1.png',
+        iconSize: [50, 50], // size of the icon
         iconAnchor: [25, 25], // point of the icon which will correspond to marker's location
         popupAnchor: [0, -25], // point from which the popup should open relative to the iconAnchor
         className: 'dot'
@@ -140,7 +141,7 @@ myLayer.on('layeradd', function(e) {
   var marker = e.layer,
     feature = marker.feature;
   marker.setIcon(L.icon(feature.properties.icon));
-  var content = '<h2>' + feature.properties.title + '</h2><img src="';
+  var content = '<h2>' + feature.properties.title + '</h2><img src="' + feature.properties.image + '" alt="">';
   marker.bindPopup(content);
 });
 myLayer.setGeoJSON(geojson);
