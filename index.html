@@ -199,7 +199,7 @@ var geojson = [
     },
     properties: {
       title: 'Vatican City',
-      //description: 'Add description',
+      description: 'Add description',
       //image: 'https://farm9.staticflickr.com/8604/15769066303_3e4dcce464_n.jpg',
       icon: {
         iconUrl: 'https://d30y9cdsu7xlg0.cloudfront.net/png/647055-200.png',
@@ -388,7 +388,7 @@ myLayer.on('layeradd', function(e) {
  var marker = e.layer,
    feature = marker.feature;
  marker.setIcon(L.icon(feature.properties.icon));
- var content = '<h2>' + feature.properties.title + '</h2><img src="' + feature.properties.image + '" alt="">';
+ var content = '<h2>' + feature.properties.title + '</h2>' + feature.properties.description + '" alt="">';
  marker.bindPopup(content);
 });
 myLayer.setGeoJSON(geojson);
