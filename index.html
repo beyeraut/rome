@@ -388,7 +388,7 @@ myLayer.on('layeradd', function(e) {
   var marker = e.layer,
     feature = marker.feature;
   marker.setIcon(L.icon(feature.properties.icon));
-  var content = '<h2>' + feature.properties.title + feature.properties.descripton';
+  var content = '<h2>' + feature.properties.title';
   marker.bindPopup(content);
 });
 myLayer.setGeoJSON(geojson);
