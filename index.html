@@ -385,11 +385,11 @@ var geojson = [
 
 // Set a custom icon on each marker based on feature properties.
 myLayer.on('layeradd', function(e) {
-  var marker = e.layer,
-    feature = marker.feature;
-  marker.setIcon(L.icon(feature.properties.icon));
-  var content = '<h2>' + feature.properties.title ;
-  marker.bindPopup(content);
+ var marker = e.layer,
+   feature = marker.feature;
+ marker.setIcon(L.icon(feature.properties.icon));
+ var content = '<h2>' + feature.properties.title + '</h2><img src="' + feature.properties.image + '" alt="">';
+ marker.bindPopup(content);
 });
 myLayer.setGeoJSON(geojson);
 mapTooltipsJS.scrollWheelZoom.disable();
