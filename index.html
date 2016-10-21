@@ -92,7 +92,7 @@
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiYmV5ZXJhdXQiLCJhIjoiY2lnM3hhMGthMjc5NHRqbTNvMmdtbHR4YiJ9.dP5gGJ59Hly_pleCOGkzQw';
 var mapTooltipsJS = L.mapbox.map('map-tooltips-js', 'mapbox.light')
-  .setView([37.8, -96], 4);
+  .setView([41.89, 12.48], 14);
 var myLayer = L.mapbox.featureLayer().addTo(mapTooltipsJS);
 
 var geojson = [
@@ -100,14 +100,14 @@ var geojson = [
     type: 'Feature',
     geometry: {
       type: 'Point',
-      coordinates: [-77.031952, 38.913184]
+      coordinates: [41.898, 12.477]
     },
     properties: {
-      title: 'Mapbox DC',
-      description: '1714 14th St NW, Washington DC',
+      title: 'Pantheon',
+      description: 'Add description',
       image: 'https://farm9.staticflickr.com/8604/15769066303_3e4dcce464_n.jpg',
       icon: {
-        iconUrl: 'https://www.mapbox.com/mapbox.js/assets/images/astronaut1.png',
+        iconUrl: 'https://d30y9cdsu7xlg0.cloudfront.net/png/641883-200.png',
         iconSize: [50, 50], // size of the icon
         iconAnchor: [25, 25], // point of the icon which will correspond to marker's location
         popupAnchor: [0, -25], // point from which the popup should open relative to the iconAnchor
